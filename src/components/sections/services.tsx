@@ -61,6 +61,7 @@ export function Services() {
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-blue-100 to-indigo-200 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
             Nuestros Servicios
           </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Ofrecemos una amplia gama de servicios de impresión y publicidad para ayudarte a destacar en el mercado.
           </p>
