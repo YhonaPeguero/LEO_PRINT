@@ -19,7 +19,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#3949ab] text-white">
+    <section className="relative min-h-[100dvh] overflow-hidden bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#3949ab] text-white" id="inicio">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5"></div>
       <motion.div 
         className="absolute inset-0 opacity-30 hidden sm:block"
