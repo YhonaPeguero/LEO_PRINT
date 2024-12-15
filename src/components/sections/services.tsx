@@ -8,42 +8,42 @@ const services = [
     icon: Printer,
     title: "Impresión Digital",
     description: "Impresión de alta calidad para todos tus proyectos, desde pequeños formatos hasta grandes dimensiones.",
-    features: ["Alta resolución", "Rápida entrega", "Diversos materiales"],
+    features: ["Alta resolución.", "Rápida entrega.", "Diversos materiales. "],
     color: "from-blue-500 to-blue-600"
   },
   {
     icon: FileText,
     title: "Papelería Corporativa",
     description: "Diseño e impresión de papelería profesional que refleja la identidad de tu empresa.",
-    features: ["Tarjetas de presentación", "Hojas membretadas", "Carpetas corporativas"],
+    features: ["Tarjetas de presentación.", "Hojas membretadas.", "Carpetas corporativas."],
     color: "from-purple-500 to-purple-600"
   },
   {
     icon: PenTool,
     title: "Diseño Gráfico",
     description: "Creación de diseños únicos y profesionales que destacan tu marca.",
-    features: ["Logos", "Branding", "Material publicitario"],
+    features: ["Logos.", "Branding.", "Material publicitario."],
     color: "from-indigo-500 to-indigo-600"
   },
   {
     icon: Package,
     title: "Material Promocional",
     description: "Artículos personalizados para promocionar tu marca y eventos especiales.",
-    features: ["Merchandising", "Regalos corporativos", "Productos personalizados"],
+    features: ["Merchandising.", "Regalos corporativos.", "Productos personalizados."],
     color: "from-cyan-500 to-cyan-600"
   },
   {
     icon: ImageIcon,
     title: "Gran Formato",
     description: "Impresión de alta calidad en formatos grandes para máximo impacto visual.",
-    features: ["Banners", "Vinilos", "Displays"],
+    features: ["Banners.", "Vinilos.", "Displays."],
     color: "from-teal-500 to-teal-600"
   },
   {
     icon: Megaphone,
     title: "Publicidad Exterior",
     description: "Soluciones de publicidad exterior para dar visibilidad a tu negocio.",
-    features: ["Rótulos", "Señalética", "Displays publicitarios"],
+    features: ["Rótulos.", "Señalética.", "Displays publicitarios."],
     color: "from-sky-500 to-sky-600"
   }
 ]
@@ -62,7 +62,7 @@ export function Services() {
             Nuestros Servicios
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios de impresión y publicidad para ayudarte a destacar en el mercado
+            Ofrecemos una amplia gama de servicios de impresión y publicidad para ayudarte a destacar en el mercado.
           </p>
         </motion.div>
 

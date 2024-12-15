@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 
 export function About() {
   const features = [
-    "Servicio personalizado y atención dedicada",
-    "Entregas puntuales a domicilio",
-    "Más de 10 años de experiencia en el sector",
-    "Especialistas en empresarios y profesionales de la salud",
-    "Tecnología de última generación",
-    "Garantía de calidad en cada proyecto"
+    "Servicio personalizado y atención dedicada.",
+    "Entregas puntuales a domicilio.",
+    "Más de 10 años de experiencia en el sector.",
+    "Especialistas en empresarios y profesionales de la salud.",
+    "Tecnología de última generación.",
+    "Garantía de calidad en cada proyecto."
   ]
 
   return (
@@ -32,24 +32,23 @@ export function About() {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 lg:pt-12"
+            className="relative z-10 lg:pt"
           >
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-gray-300 mb-8"
+              className="text-lg text-gray-300 mb-12"
             >
-              En LEO PRINT, nos especializamos en brindar soluciones de impresión y publicidad de alta calidad. 
-              Con años de experiencia en el sector, nos enfocamos en ofrecer un servicio excepcional a empresarios 
-              y profesionales de la salud en la zona este del país.
+              En LEO PRINT, nos especializamos en ofrecer soluciones integrales de impresión y publicidad de alta calidad.
+              Con años de experiencia en el sector, estamos comprometidos en brindar un servicio excepcional a empresarios y profesionales de diversas áreas, consolidándonos como un aliado estratégico en la zona este del país.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-8"
             >
               {features.map((feature, index) => (
                 <motion.div 

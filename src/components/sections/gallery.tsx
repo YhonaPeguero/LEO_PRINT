@@ -55,7 +55,7 @@ export function Gallery() {
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Descubre nuestra selección de trabajos realizados con la más alta calidad y atención al detalle
+            Descubre nuestra selección de trabajos realizados con la más alta calidad y atención al detalle.
           </p>
         </motion.div>
 
