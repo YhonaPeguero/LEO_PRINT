@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('inicio')
 
   const menuItems = [
     { to: "inicio", label: "Inicio" },
@@ -14,6 +15,35 @@ export function Header() {
     { to: "nosotros", label: "Nosotros" },
     { to: "contacto", label: "Contacto" }
   ]
+
+  // Detectar la sección actual basada en el scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = menuItems.map(item => ({
+        id: item.to,
+        element: document.getElementById(item.to)
+      }))
+
+      const headerOffset = 100 // Un poco más que el headerOffset original para mejor UX
+      const currentPosition = window.scrollY + headerOffset
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i].element
+        if (section) {
+          const sectionTop = section.offsetTop
+          if (currentPosition >= sectionTop) {
+            setActiveSection(sections[i].id)
+            break
+          }
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Llamada inicial
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Prevenir el scroll cuando el menú está abierto
   useEffect(() => {
@@ -60,10 +90,14 @@ export function Header() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <button 
             onClick={() => handleClick('inicio')}
-            className="text-2xl font-bold text-white hover:text-blue-400 transition-colors cursor-pointer relative group z-50"
+            className={`text-2xl font-bold transition-colors cursor-pointer relative group z-50 ${
+              activeSection === 'inicio' ? 'text-blue-400' : 'text-white hover:text-blue-400'
+            }`}
           >
             LEO PRINT
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform transition-transform duration-200 origin-left ${
+              activeSection === 'inicio' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+            }`}></span>
           </button>
           
           {/* Menú de escritorio */}
@@ -73,10 +107,29 @@ export function Header() {
                 <li key={index}>
                   <button
                     onClick={() => handleClick(item.to)}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 px-3 py-2 rounded-lg relative group"
+                    className={`text-gray-300 transition-all duration-300 px-3 py-2 rounded-lg relative group overflow-hidden ${
+                      activeSection === item.to ? 'text-white' : 'hover:text-white'
+                    }`}
                   >
-                    {item.label}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                    {/* Efecto de gradiente en hover y activo */}
+                    <span className={`absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/5 to-purple-500/0 transition-opacity duration-300 ${
+                      activeSection === item.to ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                    }`}></span>
+                    
+                    {/* Efecto de brillo */}
+                    <span className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 ${
+                      activeSection === item.to ? 'translate-x-full' : '-translate-x-full group-hover:translate-x-full'
+                    }`}></span>
+                    
+                    {/* Texto del menú */}
+                    <span className="relative z-10">
+                      {item.label}
+                    </span>
+                    
+                    {/* Línea inferior animada */}
+                    <span className={`absolute bottom-0 left-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 -translate-x-1/2 ${
+                      activeSection === item.to ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}></span>
                   </button>
                 </li>
               ))}
@@ -125,10 +178,14 @@ export function Header() {
                   >
                     <button
                       onClick={() => handleClick(item.to)}
-                      className="w-full text-center py-3 text-2xl font-medium text-gray-300 hover:text-blue-400 transition-all duration-200 relative group"
+                      className={`w-full text-center py-3 text-2xl font-medium transition-all duration-200 relative group ${
+                        activeSection === item.to ? 'text-blue-400' : 'text-gray-300 hover:text-blue-400'
+                      }`}
                     >
                       {item.label}
-                      <span className="absolute -bottom-2 left-1/2 w-12 h-0.5 bg-blue-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
+                      <span className={`absolute -bottom-2 left-1/2 w-12 h-0.5 bg-blue-500 transform -translate-x-1/2 transition-transform duration-200 ${
+                        activeSection === item.to ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`} />
                     </button>
                   </motion.li>
                 ))}
