@@ -60,10 +60,10 @@ export function Header() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <button 
             onClick={() => handleClick('inicio')}
-            className="text-2xl font-bold text-white hover:text-gray-200 transition-colors cursor-pointer relative group z-50"
+            className="text-2xl font-bold text-white hover:text-blue-400 transition-colors cursor-pointer relative group z-50"
           >
             LEO PRINT
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
           </button>
           
           {/* Menú de escritorio */}
@@ -73,10 +73,10 @@ export function Header() {
                 <li key={index}>
                   <button
                     onClick={() => handleClick(item.to)}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 px-3 py-2 rounded-lg relative group"
+                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 px-3 py-2 rounded-lg relative group"
                   >
                     {item.label}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
                   </button>
                 </li>
               ))}
@@ -125,10 +125,10 @@ export function Header() {
                   >
                     <button
                       onClick={() => handleClick(item.to)}
-                      className="w-full text-center py-3 text-2xl font-medium text-gray-300 hover:text-white transition-all duration-200 relative group"
+                      className="w-full text-center py-3 text-2xl font-medium text-gray-300 hover:text-blue-400 transition-all duration-200 relative group"
                     >
                       {item.label}
-                      <span className="absolute -bottom-2 left-1/2 w-12 h-0.5 bg-white transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
+                      <span className="absolute -bottom-2 left-1/2 w-12 h-0.5 bg-blue-500 transform -translate-x-1/2 scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
                     </button>
                   </motion.li>
                 ))}

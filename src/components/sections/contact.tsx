@@ -11,7 +11,7 @@ export function Contact() {
     {
       icon: Phone,
       title: "Teléfono",
-      details: "+1 (809) 123-4567",
+      details: "+1 (829) 288-8079",
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -23,7 +23,7 @@ export function Contact() {
     {
       icon: MapPin,
       title: "Ubicación",
-      details: "Santo Domingo Este, República Dominicana",
+      details: "La Romana, República Dominicana",
       color: "from-indigo-500 to-indigo-600"
     },
     {

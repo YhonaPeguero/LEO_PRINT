@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import Image from 'next/image'
+import { ChevronDown } from 'lucide-react'
 
 export function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
@@ -18,6 +19,20 @@ export function Hero() {
     }
   }, [])
 
+  const scrollToNextSection = () => {
+    const servicesSection = document.getElementById('servicios')
+    if (servicesSection) {
+      const headerOffset = 80
+      const elementPosition = servicesSection.getBoundingClientRect().top + window.pageYOffset
+      const offsetPosition = elementPosition - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      })
+    }
+  }
+
   return (
     <section className="relative min-h-[100dvh] overflow-hidden bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#3949ab] text-white" id="inicio">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5"></div>
@@ -29,12 +44,12 @@ export function Hero() {
       />
       <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-48 h-48 sm:w-96 sm:h-96 bg-blue-500 rounded-full filter blur-[60px] sm:blur-[120px] opacity-25 animate-pulse"></div>
       <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-48 h-48 sm:w-96 sm:h-96 bg-indigo-500 rounded-full filter blur-[60px] sm:blur-[120px] opacity-25 animate-pulse"></div>
-      <div className="relative z-10 container mx-auto px-4 py-16 sm:py-24 pb-20 sm:pb-32">
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-12 xl:px-16 py-24 sm:py-24 pb-20 sm:pb-32 max-w-[1920px]">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center"
+          className="flex flex-col items-center text-center mt-12 sm:mt-0"
         >
           <motion.div 
             initial={{ scale: 0.8 }}
@@ -119,6 +134,20 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+      <motion.button
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.8,
+          delay: 1.2,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+        onClick={scrollToNextSection}
+        className="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-white/80 hover:text-white cursor-pointer transition-colors z-20"
+      >
+        <ChevronDown size={32} />
+      </motion.button>
       <div className="absolute bottom-0 left-0 right-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="w-full fill-current text-gray-800">
           <path d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,149.3C960,128,1056,128,1152,149.3C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>

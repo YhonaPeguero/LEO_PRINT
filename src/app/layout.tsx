@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
+import { ScrollToTop } from '@/components/layout/ScrollToTop'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
             <p>&copy; {new Date().getFullYear()} LEO PRINT. Todos los derechos reservados.</p>
           </div>
         </footer>
+        <ScrollToTop />
       </body>
     </html>
   )
