@@ -145,7 +145,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="mt-12 sm:mt-16 max-w-[90%] sm:max-w-2xl text-base sm:text-xl text-blue-100/90 drop-shadow-lg px-4"
             >
-              Soluciones personalizadas en impresión y publicidad para empresarios y profesionales de la salud.
+              Soluciones personalizadas en impresión y publicidad para empresarios y profesionales de distintas áreas.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
