@@ -19,9 +19,12 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.className} antialiased`}>
         {children}
-        <footer className="bg-gray-900 text-white py-8">
+        <footer className="bg-gray-950 text-gray-400 py-6">
           <div className="container mx-auto px-4 text-center">
-            <p>&copy; {new Date().getFullYear()} LEO PRINT. Todos los derechos reservados.</p>
+            <p className="text-sm">
+              <span className="text-blue-400">LEO PRINT</span>{" "}
+              &copy; {new Date().getFullYear()} - Todos los derechos reservados
+            </p>
           </div>
         </footer>
         <ScrollToTop />

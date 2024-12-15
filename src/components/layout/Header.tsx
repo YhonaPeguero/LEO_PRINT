@@ -90,9 +90,7 @@ export function Header() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <button 
             onClick={() => handleClick('inicio')}
-            className={`text-2xl font-bold transition-colors cursor-pointer z-50 ${
-              activeSection === 'inicio' ? 'text-blue-400' : 'text-white hover:text-blue-400'
-            }`}
+            className="text-2xl font-bold text-blue-400 transition-colors cursor-pointer z-50 hover:text-blue-500"
           >
             LEO PRINT
           </button>
