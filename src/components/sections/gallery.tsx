@@ -53,6 +53,7 @@ export function Gallery() {
           <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
             Nuestro Trabajo
           </h2>
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Descubre nuestra selección de trabajos realizados con la más alta calidad y atención al detalle
           </p>
@@ -95,14 +96,14 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950/90 backdrop-blur-sm p-4"
             onClick={() => setSelectedImage(null)}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative w-full max-w-5xl aspect-[16/9] bg-gray-800 rounded-xl overflow-hidden"
+              className="relative w-full max-w-5xl aspect-[16/9] bg-gray-900 rounded-xl overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
               <Image
