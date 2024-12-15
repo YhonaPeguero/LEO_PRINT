@@ -89,42 +89,61 @@ export function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:translate-x-full duration-1000 transition-transform"></div>
             </motion.div>
-            <motion.div 
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-24 sm:w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full mb-8 sm:mb-12"
-            />
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight px-4"
             >
-              <span className="relative inline-block">
-                <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/30 to-indigo-400/30"></span>
-                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-blue-100 to-indigo-200 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                  Impresión
-                </span>
-              </span>{" "}
-              <span className="relative inline-block mt-2 sm:mt-0">
-                <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-indigo-400/30 to-blue-400/30"></span>
-                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-indigo-100 via-white to-blue-100 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">
-                  y Publicidad
-                </span>
-              </span>{" "}
-              <span className="relative inline-block mt-2 sm:mt-0">
-                <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/30 to-white/30"></span>
-                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
-                  de Calidad
-                </span>
-              </span>
+              <div className="relative inline-block">
+                {/* SVG para el borde animado */}
+                <svg 
+                  className="absolute -inset-4 w-[calc(100%+32px)] h-[calc(100%+32px)]" 
+                  viewBox="0 0 100 100" 
+                  preserveAspectRatio="none"
+                >
+                  <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" className="stop-blue-400" />
+                    <stop offset="50%" className="stop-indigo-400" />
+                    <stop offset="100%" className="stop-blue-400" />
+                  </linearGradient>
+                  <path 
+                    d="M0,0 L100,0 L100,100 L0,100 L0,0" 
+                    fill="none" 
+                    stroke="url(#borderGradient)"
+                    strokeWidth="0.5"
+                    className="animate-snake"
+                  />
+                </svg>
+
+                {/* Texto principal */}
+                <div className="relative">
+                  <span className="relative inline-block">
+                    <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/30 to-indigo-400/30"></span>
+                    <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-blue-100 to-indigo-200 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                      Impresión
+                    </span>
+                  </span>{" "}
+                  <span className="relative inline-block mt-2 sm:mt-0">
+                    <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-indigo-400/30 to-blue-400/30"></span>
+                    <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-indigo-100 via-white to-blue-100 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+                      y Publicidad
+                    </span>
+                  </span>{" "}
+                  <span className="relative inline-block mt-2 sm:mt-0">
+                    <span className="absolute -inset-1 blur-lg bg-gradient-to-r from-blue-400/30 to-white/30"></span>
+                    <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]">
+                      de Calidad
+                    </span>
+                  </span>
+                </div>
+              </div>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="mt-6 sm:mt-8 max-w-[90%] sm:max-w-2xl text-base sm:text-xl text-blue-100/90 drop-shadow-lg px-4"
+              className="mt-12 sm:mt-16 max-w-[90%] sm:max-w-2xl text-base sm:text-xl text-blue-100/90 drop-shadow-lg px-4"
             >
               Soluciones personalizadas en impresión y publicidad para empresarios y profesionales de la salud.
             </motion.p>
@@ -132,7 +151,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4"
+              className="mt-12 sm:mt-16 flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4"
             >
               <Button 
                 size="lg" 

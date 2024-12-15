@@ -90,14 +90,11 @@ export function Header() {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <button 
             onClick={() => handleClick('inicio')}
-            className={`text-2xl font-bold transition-colors cursor-pointer relative group z-50 ${
+            className={`text-2xl font-bold transition-colors cursor-pointer z-50 ${
               activeSection === 'inicio' ? 'text-blue-400' : 'text-white hover:text-blue-400'
             }`}
           >
             LEO PRINT
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform transition-transform duration-200 origin-left ${
-              activeSection === 'inicio' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-            }`}></span>
           </button>
           
           {/* Menú de escritorio */}
